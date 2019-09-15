@@ -4,7 +4,7 @@ module.exports = (robot) => {
         const username = msg.message.user.name;
         msg.send('はろー, ' + username);
     });
-    robot.hear(/'おみくじ'>/i, (msg) => {
+    robot.hear(/おみくじ/i, (msg) => {
         const username = msg.message.user.name;
         const lots = ['大吉','吉','中吉','末吉','凶'];
         const lot = lots[Math.floor(Math.random() * lots.length)];
@@ -16,8 +16,12 @@ module.exports = (robot) => {
         const lot = lots[Math.floor(Math.random() * lots.length)];
         msg.send(lot + ', ' + username);
     });
-    robot.hear(/'好きだよ'>/i, (msg) => {
+    robot.hear(/好きだよ/i, (msg) => {
         const username = msg.message.user.name;
         msg.send('え～えもくない');
+    });
+    robot.hear(/ちゅー/i, (msg) => {
+        const username = msg.message.user.name;
+        msg.send('やめてよ～');
     });
 };
