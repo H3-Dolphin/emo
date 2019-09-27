@@ -21,7 +21,7 @@ cronJob = require('cron').CronJob
 module.exports = (robot) ->
 
   cronjob = new cronJob(
-    cronTime: "20 * * * * fri"    # 時間
+    cronTime: "0 0 10 * * sun"    # 時間
     start:    true                # すぐにcronのjobを実行するか
     timeZone: "Asia/Tokyo"        # タイムゾーン
     onTick: ->                   
