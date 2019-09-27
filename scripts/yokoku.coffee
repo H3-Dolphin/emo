@@ -25,5 +25,5 @@ module.exports = (robot) ->
     start:    true                # すぐにcronのjobを実行するか
     timeZone: "Asia/Tokyo"        # タイムゾーン
     onTick: ->                   
-      robot.send {room: "#general"}, "定期実行のテストだよ～！"
+      robot.send "定期実行のテストだよ～！"
   )
