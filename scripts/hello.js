@@ -24,4 +24,8 @@ module.exports = (robot) => {
         const username = msg.message.user.name;
         msg.send('やめてよ～');
     });
+    robot.hear(/えもちゃん、(.+)/i, (msg) => {
+        const username = msg.message.user.name;
+        msg.send('わからないよ～');
+    });
 };
