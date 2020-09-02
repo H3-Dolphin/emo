@@ -21,19 +21,19 @@ module.exports = (robot) => {
 
     robot.respond(/list/i, (msg) => {
 	const list = todo.list();
-	if(list.length() === 0){
+	if(list.length === 0){
 	   msg.send('予定はないよ～');
 	}else{
-	   msg.send(todo.list().join('\n'));
+	   msg.send(list.join('\n'));
 	}
     });
 
     robot.respond(/donelist/i, (msg) => {
 	const donelist = todo.donelist();
-	if(donelist.length() === 0){
+	if(donelist.length === 0){
 	   msg.send('終わった予定はないよ～');
 	}else{
-	   msg.send(todo.donelist().join('\n'));
+	   msg.send(donelist.join('\n'));
 	}
     });
 
