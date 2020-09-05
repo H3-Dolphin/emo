@@ -3,6 +3,13 @@ let tasks = new Map();
 const fs = require('fs');
 const fileName = './tasks.json';
 
+try{
+   const data = fs.readFileSync(fileName, 'utf8');
+   tasks = new Map(JSON.parse(data));
+}catch (ignore){
+   console.log(fileName + 'から復元できませんでした');
+}
+
 function saveTasks(){
     fs.writeFileSync(fileName, JSON.stringify(Array.from(tasks)),'utf8');
 }
