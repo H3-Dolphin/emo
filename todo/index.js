@@ -1,8 +1,15 @@
 'use strict';
-const tasks = new Map();
+let tasks = new Map();
+const fs = require('fs');
+const fileName = './tasks.json';
+
+function saveTasks(){
+    fs.writeFileSync(fileName, JSON.stringify(Array.from(tasks)),'utf8');
+}
 
 function todo(task){
     tasks.set(task,false);
+    saveTasks();
 }
 
 function isDone(taskAndIsDonePair){
@@ -22,6 +29,7 @@ function list(){
 function done(task){
     if(tasks.has(task)){
         tasks.set(task,true);
+        saveTasks();
     }
 }
 
@@ -33,6 +41,7 @@ function donelist(){
 
 function del(task){
     tasks.delete(task);
+    saveTasks();
 }
 
 module.exports= {
